@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мой калькулятор прибыли</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2ff;
+  text-align: center;
+  padding: 20px;
+}
+.card {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px #ccc;
+}
+input, button {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 18px;
+}
+input {
+  border: 1px solid #ccc;
+}
+button {
+  background: #5145e5;
+  color: white;
+  border: none;
+}
+#result {
+  font-size: 24px;
+  font-weight: bold;
+  color: green;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>💰 Мой калькулятор</h1>
+  <p>Рассчитай свою прибыль</p>
+  <input id="income" type="number" placeholder="Введите доход">
+  <input id="expenses" type="number" placeholder="Введите расходы">
+  <button onclick="calculate()">Посчитать прибыль</button>
+  <p id="result"></p>
+</div>
+<script>
+function calculate() {
+  let income = Number(document.getElementById("income").value);
+  let expenses = Number(document.getElementById("expenses").value);
+  let profit = income - expenses;
+  document.getElementById("result").textContent =
+    "Прибыль: " + profit;
+}
+</script>
+</body>
+</html>
